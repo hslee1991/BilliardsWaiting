@@ -1,7 +1,7 @@
 package com.sinsisao.billiardswaiting.Utils;
 
 
-class WaitingLog extends Object {
+public class WaitingLog extends Object {
     private static final int DEBUG = 0;
     private static final int RELEASE = 1;
 
