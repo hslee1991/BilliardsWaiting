@@ -29,32 +29,32 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textSize="50sp"
-            app:layout_constraintBottom_toTopOf="@id/waiting_counts"
+            app:layout_constraintBottom_toTopOf="@id/waiting_count"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="대기 인원" />
 
         <TextView
-            android:id="@+id/waiting_counts"
+            android:id="@+id/waiting_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="100sp"
-            app:layout_constraintEnd_toStartOf="@id/waiting_counts_description"
+            app:layout_constraintEnd_toStartOf="@id/waiting_count_description"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/guide_sentence"
             tools:text="07" />
 
         <TextView
-            android:id="@+id/waiting_counts_description"
+            android:id="@+id/waiting_count_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:textSize="50sp"
-            app:layout_constraintBaseline_toBaselineOf="@id/waiting_counts"
-            app:layout_constraintBottom_toBottomOf="@id/waiting_counts"
+            app:layout_constraintBaseline_toBaselineOf="@id/waiting_count"
+            app:layout_constraintBottom_toBottomOf="@id/waiting_count"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/waiting_counts"
+            app:layout_constraintStart_toEndOf="@id/waiting_count"
             tools:text="명" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
