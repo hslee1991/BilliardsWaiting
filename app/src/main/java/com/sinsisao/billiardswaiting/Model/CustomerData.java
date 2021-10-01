@@ -1,4 +1,25 @@
 package com.sinsisao.billiardswaiting.Model;
 
-class CustomerData {
+public class CustomerData {
+
+    private String mNickname;
+    private int mScore;
+
+    public CustomerData(String a_nickname, int a_score) {
+        mNickname = a_nickname;
+        mScore = a_score;
+    }
+
+    public String getNickname() {
+        return mNickname;
+    }
+    public void setNickname(String a_nickname) {
+        this.mNickname = a_nickname;
+    }
+    public int getScore() {
+        return mScore;
+    }
+    public void setScore(int a_score) {
+        this.mScore = a_score;
+    }
 }
