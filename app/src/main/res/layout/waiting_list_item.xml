@@ -6,49 +6,50 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-    <android.support.constraint.Guideline
-        android:id="@+id/guide_line_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintGuide_percent="0.7" />
-
     <TextView
         android:id="@+id/customer_index"
         android:layout_width="0dp"
         android:layout_height="match_parent"
+        android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/customer_nickname"
-        app:layout_constraintVertical_chainStyle="spread"
-        app:layout_constraintHorizontal_weight="0.2"
-        app:layout_constrainedWidth="true"
-        android:textSize="100sp"
-        tools:text="1"
+        app:layout_constraintEnd_toStartOf="@id/guide_line_1"
+        tools:text="777"
         />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_line_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintGuide_percent="0.3" />
 
     <TextView
         android:id="@+id/customer_nickname"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        app:layout_constraintStart_toEndOf="customer_index"
-        app:layout_constraintEnd_toStartOf="@id/customer_score"
-        app:layout_constraintHorizontal_weight="0.5"
-        app:layout_constrainedWidth="true"
-        android:textSize="100sp"
+        android:gravity="center"
+        app:layout_constraintStart_toEndOf="@id/guide_line_1"
+        app:layout_constraintEnd_toStartOf="@id/guide_line_2"
         tools:text="황성태"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_line_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintGuide_percent="0.7" />
 
     <TextView
         android:id="@+id/customer_score"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        app:layout_constraintStart_toEndOf="customer_nickname"
+        android:gravity="center"
+        app:layout_constraintStart_toEndOf="@id/guide_line_2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_weight="0.3"
-        app:layout_constrainedWidth="true"
-        android:textSize="100sp"
         tools:text="20"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
