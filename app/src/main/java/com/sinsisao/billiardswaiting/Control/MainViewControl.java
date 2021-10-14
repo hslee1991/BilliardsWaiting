@@ -1,28 +1,38 @@
 package com.sinsisao.billiardswaiting.Control;
 
+import android.content.Context;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.sinsisao.billiardswaiting.Model.CustomerData;
-import com.sinsisao.billiardswaiting.R;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.sinsisao.billiardswaiting.Model.FileStorage;
+import com.sinsisao.billiardswaiting.Model.Usable;
 
 public class MainViewControl {
 
-    private View mRootView = null;
+    private final Context mContext;
+    private final View mRootView;
     private ListView mWaitingListView = null;
     private TextView mWaitingCount = null;
-    private List mCustomerDataList = null;
     private Button mJoinBtn = null;
     private Button mLoadBtn = null;
+    private Usable mWaitingListDataManager;
+    private FileStorage mStorageDataManager;
 
-    public MainViewControl(View a_rootView){
+    public MainViewControl(Context a_context, View a_rootView){
+        mContext = a_context;
         mRootView = a_rootView;
-        mCustomerDataList = new ArrayList<CustomerData>();
+    }
+
+    public void initialize() {
+        mWaitingListDataManager = new FileStorage();
+        mStorageDataManager = new FileStorage();
+        mStorageDataManager.load(mContext);
+    }
+
+    public void deinitialize() {
+        mStorageDataManager.save(mContext);
     }
 
     public void setWaitingList(int a_id) {
@@ -30,7 +40,8 @@ public class MainViewControl {
             return;
         }
         try {
-            mWaitingListView = (ListView) mRootView.findViewById(a_id);
+            mWaitingListView = mRootView.findViewById(a_id);
+            // todo. connect waiting list to data manager.
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -41,29 +52,29 @@ public class MainViewControl {
             return;
         }
         try {
-            mWaitingCount = (TextView) mRootView.findViewById(a_id);
+            mWaitingCount = mRootView.findViewById(a_id);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public void setJoinBtn() {
+    public void setJoinBtn(int a_id) {
         if (mJoinBtn == null) {
             return;
         }
         try {
-            mJoinBtn = (Button) mRootView.findViewById(R.id.waiting_regist);
+            mJoinBtn = mRootView.findViewById(a_id);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public void setLoadBtn() {
+    public void setLoadBtn(int a_id) {
         if (mLoadBtn == null) {
             return;
         }
         try {
-            mLoadBtn = (Button) mRootView.findViewById(R.id.waiting_loading);
+            mLoadBtn = mRootView.findViewById(a_id);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -1,6 +1,6 @@
 package com.sinsisao.billiardswaiting.Model;
 
-public class CustomerData {
+public class CustomerData implements Comparable<CustomerData> {
 
     private String mNickname;
     private int mScore;
@@ -21,5 +21,10 @@ public class CustomerData {
     }
     public void setScore(int a_score) {
         this.mScore = a_score;
+    }
+
+    @Override
+    public int compareTo(CustomerData customerData) {
+        return mNickname.compareTo(customerData.getNickname());
     }
 }
