@@ -22,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
         mViewController = new MainViewControl(this, rootView);
         mViewController.setWaitingList(R.id.waiting_board);
         mViewController.setWaitingCount(R.id.waiting_count);
-        mViewController.setJoinBtn(R.id.waiting_regist);
-        mViewController.setLoadBtn(R.id.waiting_loading);
+        mViewController.setJoinBtn(R.id.button_registration);
+        mViewController.setLoadBtn(R.id.button_load);
 
         Drawable drawable = rootView.getBackground();
         drawable.setAlpha(50);
