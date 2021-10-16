@@ -5,4 +5,8 @@
     <string name="board_status_unit">명</string>
     <string name="nickname_hint">아이디 입력 (3~12 길이)</string>
     <string name="rate_hint">핸디 입력 (숫자)</string>
+    <string name="warning_message_no_initialize">초기화 오류가 발생했습니다. 앱을 다시 실행하세요.</string>
+    <string name="warning_message_no_nickname">아이디를 입력하세요. (3~12 길이)</string>
+    <string name="warning_message_no_rating">핸디를 입력하세요.</string>
+    <string name="warning_message_nickname_overlapped">중복된 아이디 입니다.</string>
 </resources>

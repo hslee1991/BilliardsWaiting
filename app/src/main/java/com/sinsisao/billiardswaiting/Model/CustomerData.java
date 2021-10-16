@@ -1,13 +1,15 @@
 package com.sinsisao.billiardswaiting.Model;
 
-public class CustomerData implements Comparable<CustomerData> {
+import androidx.annotation.NonNull;
+
+public class CustomerData implements Comparable<CustomerData>, Cloneable {
 
     private String mNickname;
-    private int mScore;
+    private int mRating;
 
-    public CustomerData(String a_nickname, int a_score) {
+    public CustomerData(String a_nickname, int a_rating) {
         mNickname = a_nickname;
-        mScore = a_score;
+        mRating = a_rating;
     }
 
     public String getNickname() {
@@ -16,15 +18,21 @@ public class CustomerData implements Comparable<CustomerData> {
     public void setNickname(String a_nickname) {
         this.mNickname = a_nickname;
     }
-    public int getScore() {
-        return mScore;
+    public int getRating() {
+        return mRating;
     }
-    public void setScore(int a_score) {
-        this.mScore = a_score;
+    public void setRating(int a_rating) {
+        this.mRating = a_rating;
     }
 
     @Override
     public int compareTo(CustomerData customerData) {
         return mNickname.compareTo(customerData.getNickname());
+    }
+
+    @NonNull
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }

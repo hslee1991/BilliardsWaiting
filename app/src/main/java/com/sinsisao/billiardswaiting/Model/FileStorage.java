@@ -37,9 +37,9 @@ public class FileStorage implements Storable, Usable {
                 CustomerData cd = mDataList.get(i);
                 sb.append(cd.getNickname());
                 sb.append(",");
-                sb.append(cd.getScore());
+                sb.append(cd.getRating());
                 sb.append(",");
-                WaitingLog.d(i + " " + cd.getNickname() + " " + cd.getScore());
+                WaitingLog.d(i + " " + cd.getNickname() + " " + cd.getRating());
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -68,7 +68,7 @@ public class FileStorage implements Storable, Usable {
             if (dataString != null) {
                 String[] dataArray = dataString.split(",");
                 WaitingLog.d("load " + (dataArray.length / 2));
-                for (int i = 0; i < dataArray.length; i+=2) {
+                for (int i = 0; i < dataArray.length; i += 2) {
                     WaitingLog.d((i / 2) + " " + dataArray[i] + " " + dataArray[i + 1]);
                     mDataList.add(new CustomerData(dataArray[i], Integer.parseInt(dataArray[i + 1])));
                 }
@@ -97,5 +97,22 @@ public class FileStorage implements Storable, Usable {
             return null;
         }
         return mDataList.get(a_index);
+    }
+
+    @Override
+    public CustomerData get(String a_nickname) {
+        CustomerData ret = null;
+        for (CustomerData cd : mDataList) {
+            if (cd.getNickname().equals(a_nickname)) {
+                ret = cd;
+                break;
+            }
+        }
+        return ret;
+    }
+
+    @Override
+    public int size() {
+        return mDataList.size();
     }
 }
