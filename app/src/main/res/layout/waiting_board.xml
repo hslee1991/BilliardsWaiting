@@ -21,19 +21,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/waiting_list"
-        app:layout_constraintVertical_chainStyle="packed">
+        app:layout_constraintTop_toBottomOf="@id/waiting_list">
 
         <TextView
             android:id="@+id/guide_sentence"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:text="@string/board_status_description"
             android:textSize="50sp"
             app:layout_constraintBottom_toTopOf="@id/waiting_count"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="대기 인원" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/waiting_count"
@@ -51,12 +50,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
+            android:text="@string/board_status_unit"
             android:textSize="50sp"
             app:layout_constraintBaseline_toBaselineOf="@id/waiting_count"
             app:layout_constraintBottom_toBottomOf="@id/waiting_count"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/waiting_count"
-            tools:text="명" />
+            app:layout_constraintStart_toEndOf="@id/waiting_count" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

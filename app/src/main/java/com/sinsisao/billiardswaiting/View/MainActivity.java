@@ -2,7 +2,6 @@ package com.sinsisao.billiardswaiting.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 
@@ -13,14 +12,16 @@ import com.sinsisao.billiardswaiting.Utils.WaitingLog;
 public class MainActivity extends AppCompatActivity {
 
     MainViewControl mViewController;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        WaitingLog.d("onCreate()");
         setContentView(R.layout.activity_main);
 
         View rootView = findViewById(R.id.root);
         mViewController = new MainViewControl(this, rootView);
-        mViewController.setWaitingList(R.id.waiting_board);
+        mViewController.setWaitingList(R.id.waiting_list);
         mViewController.setWaitingCount(R.id.waiting_count);
         mViewController.setJoinBtn(R.id.button_registration);
         mViewController.setLoadBtn(R.id.button_load);

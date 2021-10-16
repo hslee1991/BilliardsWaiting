@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">BilliardsWaiting</string>
+    <string name="cover_image">커버 이미지</string>
+    <string name="board_status_description">대기 인원</string>
+    <string name="board_status_unit">명</string>
     <string name="nickname_hint">아이디 입력 (3~12 길이)</string>
     <string name="rate_hint">핸디 입력 (숫자)</string>
 </resources>
