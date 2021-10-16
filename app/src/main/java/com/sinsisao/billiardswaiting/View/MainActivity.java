@@ -25,9 +25,8 @@ public class MainActivity extends AppCompatActivity {
         mViewController.setWaitingCount(R.id.waiting_count);
         mViewController.setJoinBtn(R.id.button_registration);
         mViewController.setLoadBtn(R.id.button_load);
-
-        Drawable drawable = rootView.getBackground();
-        drawable.setAlpha(50);
+        mViewController.setInputNickname(R.id.newbie_nickname);
+        mViewController.setInputRating(R.id.newbie_rating);
     }
 
     @Override
