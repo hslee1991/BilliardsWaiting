@@ -24,7 +24,7 @@ public class WaitingListAdapter extends RecyclerView.Adapter<WaitingListAdapter.
     }
 
     public void add(CustomerData a_data) {
-        int index = mWaitingListDataManager.size() - 1;
+        int index = mWaitingListDataManager.size();
         WaitingLog.d("---- add [" + index + "] " + a_data.getNickname() + ", " + a_data.getRating());
         mWaitingListDataManager.add(a_data);
         notifyItemInserted(index);
