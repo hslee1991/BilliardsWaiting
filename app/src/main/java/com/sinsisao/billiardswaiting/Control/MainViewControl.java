@@ -11,12 +11,13 @@ import android.widget.Toast;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.sinsisao.billiardswaiting.Listener.MainViewListener;
 import com.sinsisao.billiardswaiting.Model.CustomerData;
 import com.sinsisao.billiardswaiting.Model.FileStorage;
 import com.sinsisao.billiardswaiting.R;
 import com.sinsisao.billiardswaiting.Utils.WaitingLog;
 
-public class MainViewControl {
+public class MainViewControl implements MainViewListener {
 
     private final Context mContext;
     private final View mRootView;
@@ -52,6 +53,7 @@ public class MainViewControl {
             mWaitingListView = mRootView.findViewById(a_id);
             mWaitingListView.setLayoutManager(new LinearLayoutManager(mContext));
             mWaitingListAdapter = new WaitingListAdapter();
+            mWaitingListAdapter.setMainViewListener(this);
             mWaitingListView.setAdapter(mWaitingListAdapter);
         } catch (Exception e) {
             e.printStackTrace();
@@ -64,6 +66,7 @@ public class MainViewControl {
         }
         try {
             mWaitingCount = mRootView.findViewById(a_id);
+            onWaitingListItemChanged();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -154,5 +157,12 @@ public class MainViewControl {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public void onWaitingListItemChanged() {
+        if (mWaitingCount != null && mWaitingListAdapter != null) {
+            mWaitingCount.setText(String.valueOf(mWaitingListAdapter.size()));
+        }
     }
 }

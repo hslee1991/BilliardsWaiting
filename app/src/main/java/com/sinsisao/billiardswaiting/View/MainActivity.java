@@ -27,25 +27,25 @@ public class MainActivity extends AppCompatActivity {
         mViewController.setLoadBtn(R.id.button_load);
         mViewController.setInputNickname(R.id.newbie_nickname);
         mViewController.setInputRating(R.id.newbie_rating);
+        mViewController.initialize();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         WaitingLog.d("onResume()");
-        mViewController.initialize();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         WaitingLog.d("onPause()");
-        mViewController.deinitialize();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         WaitingLog.d("onDestroy()");
+        mViewController.deinitialize();
     }
 }

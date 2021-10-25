@@ -1,4 +1,5 @@
 package com.sinsisao.billiardswaiting.Listener;
 
-interface MainViewListener {
+public interface MainViewListener {
+    void onWaitingListItemChanged();
 }

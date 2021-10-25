@@ -112,6 +112,41 @@ public class FileStorage implements Storable, Usable {
     }
 
     @Override
+    public void remove(int a_index) {
+        if (a_index < 0 || mDataList.size() <= a_index)
+            return;
+        mDataList.remove(a_index);
+    }
+
+    @Override
+    public void remove(CustomerData a_data) {
+        if (a_data == null)
+            return;
+        for (CustomerData cd : mDataList) {
+            if (cd.getNickname().equals(a_data.getNickname())) {
+                mDataList.remove(cd);
+                break;
+            }
+        }
+    }
+
+    @Override
+    public int indexOf(CustomerData a_data) {
+        if (a_data == null)
+            return -1;
+
+        int size = mDataList.size();
+        int ret = -1;
+        for (int i = 0; i < size; i++) {
+            if (get(i).getNickname().equals(a_data.getNickname())) {
+                ret = i;
+                break;
+            }
+        }
+        return ret;
+    }
+
+    @Override
     public int size() {
         return mDataList.size();
     }
