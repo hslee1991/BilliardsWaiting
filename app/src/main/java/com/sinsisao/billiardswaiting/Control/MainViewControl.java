@@ -93,6 +93,9 @@ public class MainViewControl implements MainViewListener {
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
+                            mRating.setText("");
+                            mNickname.setText("");
+                            mNickname.requestFocus();
                         }
                     }
                 });
@@ -144,16 +147,19 @@ public class MainViewControl implements MainViewListener {
         String nickname = mNickname.getText().toString();
         if (nickname.length() < 3) {
             Toast.makeText(mContext, mContext.getString(R.string.warning_message_no_nickname), Toast.LENGTH_SHORT).show();
+            mNickname.requestFocus();
             return false;
         }
         String rating = mRating.getText().toString();
         if (rating.length() <= 0) {
             Toast.makeText(mContext, mContext.getString(R.string.warning_message_no_rating), Toast.LENGTH_SHORT).show();
+            mRating.requestFocus();
             return false;
         }
         CustomerData cd = mStorageDataManager.get(nickname);
         if (cd != null) {
             Toast.makeText(mContext, mContext.getString(R.string.warning_message_nickname_overlapped), Toast.LENGTH_SHORT).show();
+            mNickname.requestFocus();
             return false;
         }
         return true;
